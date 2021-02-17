@@ -177,7 +177,7 @@ namespace Xamarin.CommunityToolkit.Effects
 				return;
 			}
 
-			if (sender.LongPressCommand == null || sender.InteractionStatus == TouchInteractionStatus.Completed)
+			if (sender.InteractionStatus == TouchInteractionStatus.Completed)
 				return;
 
 			longPressTokenSource = new CancellationTokenSource();
@@ -189,6 +189,7 @@ namespace Xamarin.CommunityToolkit.Effects
 				var longPressAction = new Action(() =>
 				{
 					sender.HandleUserInteraction(TouchInteractionStatus.Completed);
+					sender.RaiseLongPressed();
 					sender.LongPressCommand?.Execute(sender.LongPressCommandParameter ?? sender.CommandParameter);
 				});
 
