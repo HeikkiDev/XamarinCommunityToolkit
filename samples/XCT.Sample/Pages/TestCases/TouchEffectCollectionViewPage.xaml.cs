@@ -15,5 +15,7 @@ namespace Xamarin.CommunityToolkit.Sample.Pages.TestCases
 		{
 			this.DisplayAlert("Long Press", null, "OK");
 		});
+
+		void OnLongPressed(object sender, TouchLongPressedEventArgs e) => Console.WriteLine("Long pressed event raised.");
 	}
 }

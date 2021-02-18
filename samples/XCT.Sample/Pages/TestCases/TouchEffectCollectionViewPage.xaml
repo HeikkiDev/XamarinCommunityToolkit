@@ -32,9 +32,12 @@
             <Frame HeightRequest="120"
                    CornerRadius="0"
                    Padding="0"
-                   HasShadow="True"
-                   xct:TouchEffect.LongPressCommand="{Binding LongPressCommand, Source={x:Reference Page}}"
-                   xct:TouchEffect.NativeAnimation="True">
+                   HasShadow="True">
+                <Frame.Effects>
+                    <xct:TouchEffect LongPressCommand="{Binding LongPressCommand, Source={x:Reference Page}}"
+                                    LongPressed="OnLongPressed"
+                                    NativeAnimation="True" />
+                </Frame.Effects>
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
