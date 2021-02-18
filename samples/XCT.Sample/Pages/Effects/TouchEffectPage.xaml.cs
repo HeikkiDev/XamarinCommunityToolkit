@@ -21,6 +21,9 @@ namespace Xamarin.CommunityToolkit.Sample.Pages.Effects
 
 		}
 
+		void OnLongPressed(object sender, TouchLongPressedEventArgs e) => Console.WriteLine("Long pressed event raised.");
+		void OnCompleted(object sender, TouchCompletedEventArgs e) => Console.WriteLine("Completed event raised.");
+
 		public ICommand Command { get; }
 
 		public ICommand LongPressCommand { get; }

@@ -1101,7 +1101,7 @@ namespace Xamarin.CommunityToolkit.Effects
 			=> weakEventManager.RaiseEvent(Element, new TouchCompletedEventArgs(CommandParameter), nameof(Completed));
 		
 		internal void RaiseLongPressed()
-			=> weakEventManager.RaiseEvent(Element, new TouchCompletedEventArgs(LongPressCommandParameter), nameof(LongPressed));
+			=> weakEventManager.RaiseEvent(Element, new TouchLongPressedEventArgs(LongPressCommandParameter), nameof(LongPressed));
 
 		internal void ForceUpdateState(bool animated = true)
 		{

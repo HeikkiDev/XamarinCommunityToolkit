@@ -60,11 +60,15 @@
                 <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          BackgroundColor="Black"
-                         Padding="20"
-                         xct:TouchEffect.HoveredScale="1.2"
-                         xct:TouchEffect.NativeAnimation="True"
-                         xct:TouchEffect.LongPressCommand="{Binding LongPressCommand, Source={x:Reference Page}}"
-                         xct:TouchEffect.Command="{Binding Command, Source={x:Reference Page}}">
+                         Padding="20">
+                    <StackLayout.Effects>
+                        <xct:TouchEffect HoveredScale="1.2"
+                                        NativeAnimation="True"
+                                        LongPressCommand="{Binding LongPressCommand, Source={x:Reference Page}}"
+                                        LongPressed="OnLongPressed"
+                                        Command="{Binding Command, Source={x:Reference Page}}"
+                                        Completed="OnCompleted" />
+                    </StackLayout.Effects>
                     <Label Text="TITLE"
                        TextColor="White"
                        FontSize="Large"/>
